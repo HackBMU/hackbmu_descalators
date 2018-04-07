@@ -19,7 +19,21 @@ def resultpage(request):
     if request.method=='POST':
         form=forms.Feedback(request.POST)
         if form.is_valid():
-            print('hi')
+            a=form.cleaned_data['Restaurant']
+            b=form.cleaned_data['Food']
+            c=form.cleaned_data['Mood']
+            d=form.cleaned_data['Rating']
+            print(a)
+            print(b)
+            print(c)
+            print(d)
+            v=Restaurants.objects.filter(name=a).values_list()
+            print(v[0])
+            f=v[0][4]
+            g=v[0][6]
+            nv= ((f*g)+d)/(g+1)
+            Restaurants.objects.filter(name=a).update(rating=nv)
+            Restaurants.objects.filter(name=a).update(count=g+1)
         return render(request,'test.html',{'form':form})
     return render(request,'foody_1/result.html',{'form':form})
 

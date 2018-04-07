@@ -23,11 +23,13 @@ MOOD_CHOICES= [
     ('Unwellie', 'Unwellie'),
     ]
 RESTAURANT_CHOICES=[
-   ('PizzaHut','PizzaHut'),
+   (1,'PizzaHut'),(2,'Dominos'),(3,'BeijingStreet'),(4,'KakeDiHatti'),(5,'ItalianJoint'),(6,'ChineseYum'),(7,'SagarRatna'),(8,'QDs'),(9,'DCafe'),(10,'Tamasha'),(11,'MasalaTrail'),
 ]
+
 FOOD_CHOICES=[
-('Pasta','Pasta'),
+   (1,'Cholle Bhature'),(2,'Rajma Chawal'),(3,'Pasta'),(4,'Garlic Bread'),(5,'Ham'),(6,'Spring Roll'),(7,'Idli'),(8,'Dosa'),(9,'Noodles'),(10,'Chilly Paneer'),(11,'Vada pao'),(12,'Aaloo Tikki'),(13,'Tea'),(14,'Ice Cream'),(15,'Chocolates'),(16,'Pastries'),(17,'Juices'),(18,'Soft Drinks')
 ]
+
 class Feedback(forms.Form):
 
     Restaurant=forms.CharField(widget=forms.Select(choices=RESTAURANT_CHOICES))
